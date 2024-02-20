@@ -55,13 +55,11 @@ const {success, value} = User.safeParse({
 You can nest schemas arbitrarely.
 
 ```ts
-const Author = x
-  .object({
-    first: x.string().min(1),
-    last: x.string().min(1),
-    dob: x.date().optional(),
-  })
-  .strip();
+const Author = x.object({
+  first: x.string().min(1),
+  last: x.string().min(1),
+  dob: x.date().optional(),
+});
 type Author = Infer<typeof Author>;
 
 const Book = x.object({
@@ -71,12 +69,10 @@ const Book = x.object({
 });
 type Book = Infer<typeof Book>;
 
-const Library = x
-  .object({
-    name: x.string(),
-    books: x.array(Book),
-  })
-  .strip();
+const Library = x.object({
+  name: x.string(),
+  books: x.array(Book),
+});
 type Library = Infer<typeof Library>;
 ```
 
