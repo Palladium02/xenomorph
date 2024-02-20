@@ -44,7 +44,7 @@ try {
 Alternatively you can use `safeParse` which will return an object containing the success status and an optionally parsed value in case parsing does not fail.
 
 ```ts
-const {success, value} = User.parse({
+const {success, value} = User.safeParse({
   email: '',
   password: 123,
 });
