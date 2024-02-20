@@ -1,0 +1,21 @@
+import { XenomorphAny } from './any';
+import { XenomorphArray } from './array';
+import { XenomorphBasetype } from './basetype';
+import { XenomorphBoolean } from './boolean';
+import { XenomorphDate } from './date';
+import { XenomorphLiteral } from './literal';
+import { XenomorphNull } from './null';
+import { XenomorphNumber } from './number';
+import { XenomorphObject } from './object';
+import { XenomorphString } from './string';
+export declare const xenomorph: () => {
+    number: () => XenomorphNumber;
+    string: () => XenomorphString;
+    date: () => XenomorphDate;
+    object: <Schema extends Record<string, XenomorphBasetype<unknown>>>(schema: Schema) => XenomorphObject<Schema, { [Key in keyof Schema]: ReturnType<Schema[Key]["parse"]>; }>;
+    array: <T>(type: XenomorphBasetype<T>) => XenomorphArray<T>;
+    any: () => XenomorphAny;
+    boolean: () => XenomorphBoolean;
+    literal: <T_1>(literal: T_1) => XenomorphLiteral<T_1>;
+    null: () => XenomorphNull;
+};
