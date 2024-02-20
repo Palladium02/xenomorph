@@ -128,7 +128,7 @@ Note that Xenomorph does not perform sanity checks on the schemas you have defin
 
 `x.object(o)` creates a schema that expects/represents an object where `o` defines the shape of said object.
 
-- `nostrip()` - by default Xenomorph does strip unwanted properties from object so use `nostrip()` to keep them
+- `nostrip()` - by default Xenomorph does strip unwanted properties from objects so use `nostrip()` to keep them
 - `partial()`
 - `shape()`
 
